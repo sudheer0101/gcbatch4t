@@ -1,0 +1,22 @@
+{
+   "AWSTemplateFormatVersion":"2010-09-09",
+   "Resources":{
+      "ChildStack01":{
+         "Type":"AWS::CloudFormation::Stack",
+         "Properties":{
+            "TemplateURL":"https://s3.ap-south-1.amazonaws.com/cfproject.oracle.com/VPC-02.json",
+            
+            "TimeoutInMinutes":"60"
+         }
+      },
+      "ChildStack02":{
+         "Type":"AWS::CloudFormation::Stack",
+         "Properties":{
+            "TemplateURL":"https://s3.ap-south-1.amazonaws.com/cfproject.oracle.com/VPC-01.json",
+            
+            "TimeoutInMinutes":"60"
+         }
+      }
+	  
+   }
+}
